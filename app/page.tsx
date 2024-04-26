@@ -1,7 +1,12 @@
+import { Post } from "./_component/Post";
+import * as homeStyles from "@/styles/home.css";
+
 export default function Home() {
   return (
-    <>
-      <h1>Tap</h1>
-    </>
+    <div className={homeStyles.postList}>
+      <Post />
+      <Post />
+      <Post />
+    </div>
   );
 }
