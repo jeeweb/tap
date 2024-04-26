@@ -1,6 +1,10 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { notoSansKr } from "@/styles/fonts/fonts";
+import { Nav } from "./_component/Nav";
+import * as commonStyles from "@/styles/common.css";
 import "@/styles/reset.css";
+//import "@/styles/theme.css";
 
 export const metadata: Metadata = {
   title: "Tap",
@@ -17,11 +21,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={notoSansKr.variable}>
-        <header>
-          <h1>Tap</h1>
+      <body className={`${commonStyles.common} ${notoSansKr.className}`}>
+        <header className={commonStyles.header}>
+          <h1>
+            <Link href="/">Tap</Link>
+          </h1>
+          <Nav />
         </header>
-        {children}
+        <div className={commonStyles.contentWrap}>{children}</div>
         {modal}
       </body>
     </html>

@@ -12,6 +12,7 @@ globalStyle("html, body", {
 
 globalStyle("body", {
   lineHeight: "1",
+  fontSize: "14px",
 });
 
 globalStyle("ol, ul", {
@@ -60,6 +61,7 @@ globalStyle("button", {
   fontSize: "inherit",
   fontFamily: "inherit",
   color: "inherit",
+  lineHeight: "1",
   background: "none",
   cursor: "pointer",
 });
