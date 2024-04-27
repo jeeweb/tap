@@ -4,9 +4,8 @@ export const scrollWrap = style({
   height: "100%",
   overflowY: "auto",
   "::-webkit-scrollbar": {
-    width: "6px",
-    height: "6px",
-    paddingLeft: "4px",
+    width: "12px",
+    height: "12px",
   },
   "::-webkit-scrollbar-track": {
     backgroundColor: "#F7FBFF",
@@ -14,6 +13,7 @@ export const scrollWrap = style({
   "::-webkit-scrollbar-thumb": {
     backgroundColor: "#f2f2f2",
     borderRadius: "3px",
+    border: "3px solid #F7FBFF",
   },
 });
 

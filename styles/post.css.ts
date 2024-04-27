@@ -89,8 +89,8 @@ export const contentBox = style({
   maxHeight: "8em",
   overflowY: "auto",
   "::-webkit-scrollbar": {
-    width: "6px",
-    height: "6px",
+    width: "8px",
+    height: "8px",
   },
   "::-webkit-scrollbar-track": {
     backgroundColor: "#F7FBFF",
@@ -98,6 +98,7 @@ export const contentBox = style({
   "::-webkit-scrollbar-thumb": {
     backgroundColor: "#f2f2f2",
     borderRadius: "3px",
+    border: "2px solid #F7FBFF",
   },
   selectors: {
     [`${modalContent} &`]: {
@@ -106,8 +107,14 @@ export const contentBox = style({
     [`${modalContent} &::-webkit-scrollbar-track`]: {
       backgroundColor: "#fff",
     },
+    [`${modalContent} &::-webkit-scrollbar-thumb`]: {
+      borderColor: "#fff",
+    },
     [`${postItem}:hover &::-webkit-scrollbar-track`]: {
       backgroundColor: "#fff",
+    },
+    [`${postItem}:hover &::-webkit-scrollbar-thumb`]: {
+      borderColor: "#fff",
     },
   },
 });
