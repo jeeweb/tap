@@ -24,10 +24,10 @@ export default function CreateAccount() {
           <div className={formStyles.inputBox}>
             <input
               type="text"
-              placeholder="name"
+              placeholder="Name or Nickname"
               className={formStyles.input}
               {...register("username", {
-                required: "Please write your name",
+                required: "Please write your name or nickname.",
               })}
             />
           </div>
@@ -41,10 +41,10 @@ export default function CreateAccount() {
           <div className={formStyles.inputBox}>
             <input
               type="email"
-              placeholder="email"
+              placeholder="Email"
               className={formStyles.input}
               {...register("email", {
-                required: "Please write your email",
+                required: "Please write your email.",
               })}
             />
           </div>
@@ -56,10 +56,10 @@ export default function CreateAccount() {
           <div className={formStyles.inputBox}>
             <input
               type="password"
-              placeholder="password"
+              placeholder="Password"
               className={formStyles.input}
               {...register("password", {
-                required: "Please write your password",
+                required: "Please write your password.",
               })}
             />
           </div>
@@ -73,10 +73,10 @@ export default function CreateAccount() {
           <div className={formStyles.inputBox}>
             <input
               type="password"
-              placeholder="confirm password"
+              placeholder="Confirm Password"
               className={formStyles.input}
               {...register("confirmPassword", {
-                required: "Please confirm your password",
+                required: "Please confirm your password.",
               })}
             />
           </div>

@@ -24,10 +24,10 @@ export default function Login() {
           <div className={formStyles.inputBox}>
             <input
               type="email"
-              placeholder="email"
+              placeholder="Email"
               className={formStyles.input}
               {...register("email", {
-                required: "Please write your email",
+                required: "Please write your email.",
               })}
             />
           </div>
@@ -39,10 +39,10 @@ export default function Login() {
           <div className={formStyles.inputBox}>
             <input
               type="password"
-              placeholder="password"
+              placeholder="Password"
               className={formStyles.input}
               {...register("password", {
-                required: "Please write your password",
+                required: "Please write your password.",
               })}
             />
           </div>
