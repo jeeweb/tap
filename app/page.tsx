@@ -1,12 +1,15 @@
+import { IPost } from "@/types/Post";
 import { Post } from "./_component/Post";
 import * as homeStyles from "@/styles/home.css";
+import { mockData } from "./mockData";
 
 export default function Home() {
+  const data: IPost[] = mockData;
   return (
     <div className={homeStyles.postList}>
-      <Post />
-      <Post />
-      <Post />
+      {data.map((post) => (
+        <Post key={post.id} {...post} />
+      ))}
     </div>
   );
 }
