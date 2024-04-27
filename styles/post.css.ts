@@ -98,3 +98,18 @@ export const feedbackItem = style({
   alignItems: "center",
   justifyContent: "center",
 });
+
+export const likeItem = style({
+  display: "flex",
+  alignItems: "center",
+  gap: "0.2em",
+});
+
+export const likeNumber = style({
+  color: "#7E7E7F",
+  fontSize: "0.875em",
+});
+
+export const likeNumberSelected = style({
+  color: "#5BDCC0",
+});
