@@ -1,8 +1,16 @@
 "use client";
-import * as postStyles from "@/styles/post.css";
 import Link from "next/link";
-import { IPost } from "@/types/Post";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import "dayjs/locale/ko";
 import { Like } from "./Like";
+import { IPost } from "@/types/Post";
+import * as postStyles from "@/styles/post.css";
+
+dayjs.locale("ko");
+dayjs.extend(relativeTime);
+
+const now = dayjs(new Date());
 
 export function Post({
   id,
@@ -20,7 +28,9 @@ export function Post({
           <span className={postStyles.username}>{author}</span>
         </div>
         <span className={postStyles.postCreatedAt}>
-          {created_at.toString()}
+          {now.diff(created_at, "day") > 3
+            ? dayjs(created_at).format("YYYY.MM.DD")
+            : dayjs(created_at).fromNow()}
         </span>
       </div>
       <Link href={`/tweet/${id}`}>

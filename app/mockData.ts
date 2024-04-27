@@ -10,7 +10,7 @@ export const mockData = [
   {
     id: 2,
     author: "John Doe",
-    created_at: new Date(),
+    created_at: new Date("2024-04-26"),
     content: "Hello World2",
     isLike: false,
     likes: 2,
@@ -18,7 +18,7 @@ export const mockData = [
   {
     id: 3,
     author: "John Doe",
-    created_at: new Date(),
+    created_at: new Date("2024-03-20"),
     content: "Hello World3",
     isLike: true,
     likes: 14,
