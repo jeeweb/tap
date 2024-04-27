@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { notoSansKr } from "@/styles/fonts/fonts";
+import { galada, notoSansKr } from "@/styles/fonts/fonts";
 import { Nav } from "./_component/Nav";
 import * as commonStyles from "@/styles/common.css";
 import "@/styles/reset.css";
@@ -22,13 +22,20 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`${commonStyles.common} ${notoSansKr.className}`}>
-        <header className={commonStyles.header}>
-          <h1>
-            <Link href="/">Tap</Link>
-          </h1>
-          <Nav />
-        </header>
-        <div className={commonStyles.contentWrap}>{children}</div>
+        <div className={commonStyles.container}>
+          <section className={commonStyles.aside}>
+            <h1 className={`${commonStyles.logo} ${galada.className}`}>
+              <Link href="/">Tap</Link>
+            </h1>
+            <p></p>
+          </section>
+          <section className={commonStyles.contentWrap}>
+            <div className={commonStyles.contentWrapTop}>
+            <Nav />
+            </div>
+            {children}
+          </section>
+        </div>
         {modal}
       </body>
     </html>

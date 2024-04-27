@@ -16,7 +16,7 @@ export const modalContent = style({
   position: "relative",
   padding: "2em",
   width: "800px",
-  border: "1px solid #B0B3B5",
+  border: "1px solid #d2d2d2",
   borderRadius: "8px",
   backgroundColor: "#fff",
   boxShadow: "2px 2px 12px 0px rgba(0,0,0,0.5)",
@@ -29,9 +29,13 @@ export const ButtonClose = style({
 });
 
 export const postItem = style({
+  padding: "1em",
+  ":hover": {
+    backgroundColor: "#fff",
+  },
   selectors: {
     "& + &": {
-      marginTop: "2em",
+      borderTop: "1px solid #f2f2f2",
     },
   },
 });
@@ -39,49 +43,74 @@ export const postItem = style({
 export const postTop = style({
   display: "flex",
   alignItems: "center",
-  justifyContent: "space-between",
+  gap: "0.6em",
 });
 
 export const userInfo = style({
   display: "flex",
   alignItems: "center",
-  gap: "1em",
 });
 
 export const username = style({
   fontWeight: "bold",
   selectors: {
     [`${modalContent} &`]: {
-      fontSize: "1.2em",
+      fontSize: "1.6em",
+      marginBottom: "12px",
     },
   },
+});
+
+export const symbol = style({
+  color: "#c1bebe",
 });
 
 export const postCreatedAt = style({
   color: "#7E7E7F",
   fontSize: "0.875em",
-});
-
-export const postContent = style({
-  display: "flex",
-  alignItems: "center",
-  padding: "1em",
-  marginTop: "6px",
-  minHeight: "5.2em",
-  border: "1px solid #B0B3B5",
-  borderRadius: "8px",
-  backgroundColor: "#fff",
   selectors: {
     [`${modalContent} &`]: {
-      padding: "1em 0",
-      border: "none",
-      borderRadius: "0",
-      backgroundColor: "transparent",
+      fontSize: "1em",
     },
   },
 });
 
-export const contentBox = style({});
+export const postContent = style({
+  marginTop: "6px",
+  minHeight: "2.6em",
+  selectors: {
+    [`${modalContent} &`]: {
+      marginTop: "12px",
+    },
+  },
+});
+
+export const contentBox = style({
+  maxHeight: "8em",
+  overflowY: "auto",
+  "::-webkit-scrollbar": {
+    width: "6px",
+    height: "6px",
+  },
+  "::-webkit-scrollbar-track": {
+    backgroundColor: "#F7FBFF",
+  },
+  "::-webkit-scrollbar-thumb": {
+    backgroundColor: "#f2f2f2",
+    borderRadius: "3px",
+  },
+  selectors: {
+    [`${modalContent} &`]: {
+      maxHeight: "16em",
+    },
+    [`${modalContent} &::-webkit-scrollbar-track`]: {
+      backgroundColor: "#fff",
+    },
+    [`${postItem}:hover &::-webkit-scrollbar-track`]: {
+      backgroundColor: "#fff",
+    },
+  },
+});
 
 export const contentText = style({
   lineHeight: 1.6,
@@ -91,6 +120,7 @@ export const feedbacks = style({
   display: "flex",
   alignItems: "center",
   gap: "6px",
+  marginLeft: "8px",
 });
 
 export const feedbackItem = style({
@@ -106,7 +136,7 @@ export const likeItem = style({
 });
 
 export const likeNumber = style({
-  color: "#7E7E7F",
+  color: "#929292",
   fontSize: "0.875em",
 });
 

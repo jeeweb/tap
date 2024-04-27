@@ -18,7 +18,7 @@ export default function Login() {
 
   return (
     <div className={formStyles.formWrap}>
-      <h2>Login</h2>
+      <h2 className={formStyles.formTitle}>Login</h2>
       <form onSubmit={handleSubmit(onValid)} className={formStyles.formBox}>
         <div className={formStyles.formRow}>
           <div className={formStyles.inputBox}>

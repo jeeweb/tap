@@ -27,12 +27,19 @@ export function Post({
           {/* userimg */}
           <span className={postStyles.username}>{author}</span>
         </div>
+        <span className={postStyles.symbol}>•</span>
         <span className={postStyles.postCreatedAt}>
           {now.diff(created_at, "day") > 3
             ? dayjs(created_at).format("YYYY.MM.DD")
             : dayjs(created_at).fromNow()}
         </span>
+        <ul className={postStyles.feedbacks}>
+          <li className={postStyles.feedbackItem}>
+            <Like isLike={isLike} likes={likes} />
+          </li>
+        </ul>
       </div>
+
       <Link href={`/tweet/${id}`}>
         <div className={postStyles.postContent}>
           <div className={postStyles.contentBox}>
@@ -40,11 +47,6 @@ export function Post({
           </div>
         </div>
       </Link>
-      <ul className={postStyles.feedbacks}>
-        <li className={postStyles.feedbackItem}>
-          <Like isLike={isLike} likes={likes} />
-        </li>
-      </ul>
     </div>
   );
 }

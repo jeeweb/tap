@@ -13,6 +13,7 @@ globalStyle("html, body", {
 globalStyle("body", {
   lineHeight: "1",
   fontSize: "14px",
+  color: "#212521",
 });
 
 globalStyle("ol, ul", {
@@ -53,6 +54,15 @@ globalStyle("input", {
 globalStyle("input:focus", {
   outline: "none",
 });
+
+globalStyle(
+  "input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus",
+  {
+    WebkitTextFillColor: "#212521",
+    WebkitBoxShadow: "0 0 0px 1000px #fff inset",
+    transition: "background-color 5000s ease-in-out 0s",
+  }
+);
 
 globalStyle("button", {
   padding: 0,

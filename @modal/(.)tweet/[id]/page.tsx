@@ -22,24 +22,23 @@ export default function PostDetail({ params }: { params: { id: string } }) {
         <div className={postStyles.userInfo}>
           <span className={postStyles.username}>{postData?.author}</span>
         </div>
-        <span>
-          {now.diff(postData!.created_at, "day") > 3
-            ? dayjs(postData!.created_at).format("YYYY.MM.DD")
-            : dayjs(postData!.created_at).fromNow()}
-        </span>
+        <div className={postStyles.postTop}>
+          <span className={postStyles.postCreatedAt}>
+            {now.diff(postData!.created_at, "day") > 3
+              ? dayjs(postData!.created_at).format("YYYY.MM.DD")
+              : dayjs(postData!.created_at).fromNow()}
+          </span>
+          <ul className={postStyles.feedbacks}>
+            <li className={postStyles.feedbackItem}>
+              <Like isLike={postData!.isLike} likes={postData!.likes} />
+            </li>
+          </ul>
+        </div>
         <div className={postStyles.postContent}>
           <div className={postStyles.contentBox}>
-            <p className={postStyles.contentText}>
-              {postData?.content}
-              {id}
-            </p>
+            <p className={postStyles.contentText}>{postData?.content}</p>
           </div>
         </div>
-        <ul className={postStyles.feedbacks}>
-          <li className={postStyles.feedbackItem}>
-            <Like isLike={postData!.isLike} likes={postData!.likes} />
-          </li>
-        </ul>
         <CloseButton />
       </div>
     </div>

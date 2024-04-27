@@ -4,16 +4,16 @@ import * as commonStyles from "@/styles/common.css";
 
 export function Nav() {
   return (
-    <nav>
+    <nav className={commonStyles.navBox}>
       <ul className={commonStyles.navList}>
         <li>
           <Link href="/create-account" className={commonStyles.navItem}>
-            가입하기
+            sign in
           </Link>
         </li>
         <li>
           <Link href="/log-in" className={commonStyles.navItem}>
-            로그인
+            login
           </Link>
         </li>
       </ul>

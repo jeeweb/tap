@@ -6,10 +6,12 @@ import { mockData } from "./mockData";
 export default function Home() {
   const data: IPost[] = mockData;
   return (
-    <div className={homeStyles.postList}>
-      {data.map((post) => (
-        <Post key={post.id} {...post} />
-      ))}
+    <div className={homeStyles.scrollWrap}>
+      <div className={homeStyles.postList}>
+        {data.map((post) => (
+          <Post key={post.id} {...post} />
+        ))}
+      </div>
     </div>
   );
 }

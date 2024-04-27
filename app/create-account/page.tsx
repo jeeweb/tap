@@ -18,7 +18,7 @@ export default function CreateAccount() {
 
   return (
     <div className={formStyles.formWrap}>
-      <h2>Create Account</h2>
+      <h2 className={formStyles.formTitle}>Create Account</h2>
       <form onSubmit={handleSubmit(onValid)} className={formStyles.formBox}>
         <div className={formStyles.formRow}>
           <div className={formStyles.inputBox}>
@@ -47,6 +47,7 @@ export default function CreateAccount() {
                 required: "Please write your email.",
               })}
             />
+            <button className={formStyles.button}>Check</button>
           </div>
           {errors.email && (
             <span className={formStyles.formError}>{errors.email.message}</span>
