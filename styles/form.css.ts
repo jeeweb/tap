@@ -27,7 +27,6 @@ export const formRowSubmit = style({
 
 export const formRow = style({
   position: "relative",
-  paddingBottom: "1.2em",
   selectors: {
     "& + &": {
       marginTop: "1.2em",
@@ -43,6 +42,7 @@ export const inputBox = style({
   display: "flex",
   alignItems: "center",
   // padding: "10px 14px",
+  marginBottom: "6px",
   border: "1px solid #d2d2d2",
   borderRadius: "20px",
   backgroundColor: "#fff",
@@ -96,8 +96,7 @@ export const button = style({
 });
 
 export const formError = style({
-  position: "absolute",
-  bottom: 0,
+  lineHeight: 1.4,
   paddingLeft: "14px",
   color: "#DE6B2D",
   fontSize: "0.875em",
