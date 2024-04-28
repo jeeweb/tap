@@ -28,8 +28,22 @@ export const container = style({
 });
 
 export const aside = style({
-  padding: "6.8em 4em 3em",
-  width: "24vw",
+  padding: "6.8em 2em 3em 4em",
+  width: "26vw",
+  maxWidth: "360px",
+  minWidth: "164px",
+});
+
+export const greeting = style({
+  margin: "2.4em 0 0.6em",
+  fontSize: "2em",
+  lineHeight: 1.4,
+  fontWeight: 600,
+});
+
+export const sayHello = style({
+  display: "block",
+  color: "#5BDCC0",
 });
 
 export const contentWrap = style({

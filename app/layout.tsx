@@ -4,6 +4,7 @@ import { galada, notoSansKr } from "@/styles/fonts/fonts";
 import { Nav } from "./_component/Nav";
 import * as commonStyles from "@/styles/common.css";
 import "@/styles/reset.css";
+import { PostUploadForm } from "./_component/PostUploadForm";
 //import "@/styles/theme.css";
 
 export const metadata: Metadata = {
@@ -27,16 +28,22 @@ export default function RootLayout({
             <h1 className={`${commonStyles.logo} ${galada.className}`}>
               <Link href="/">Tap</Link>
             </h1>
-            <p></p>
+            <div>
+              <p className={commonStyles.greeting}>
+                <span className={commonStyles.sayHello}>Hello,</span>
+                재니스👋
+              </p>
+              <PostUploadForm />
+            </div>
           </section>
           <section className={commonStyles.contentWrap}>
             <div className={commonStyles.contentWrapTop}>
-            <Nav />
+              <Nav />
             </div>
             {children}
+            {modal}
           </section>
         </div>
-        {modal}
       </body>
     </html>
   );

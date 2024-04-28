@@ -44,14 +44,19 @@ globalStyle("a", {
   color: "inherit",
 });
 
-globalStyle("input", {
+globalStyle("input, textarea", {
   padding: 0,
   margin: 0,
   border: 0,
   background: "none",
+  fontFamily: "inherit",
 });
 
-globalStyle("input:focus", {
+globalStyle("textarea", {
+  resize: "none",
+});
+
+globalStyle("input:focus, textarea:focus", {
   outline: "none",
 });
 

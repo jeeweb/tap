@@ -1,4 +1,5 @@
 import { style } from "@vanilla-extract/css";
+import { aside } from "./common.css";
 
 export const formWrap = style({
   display: "flex",
@@ -12,6 +13,11 @@ export const formTitle = style({
 
 export const formBox = style({
   width: "420px",
+  selectors: {
+    [`${aside} &`]: {
+      width: "100%",
+    },
+  },
 });
 
 export const formRowSubmit = style({
@@ -52,6 +58,27 @@ export const input = style({
   },
 });
 
+export const textareaBox = style({
+  flex: 1,
+  display: "flex",
+  flexDirection: "column",
+  position: "relative",
+  border: "1px solid #d2d2d2",
+  borderRadius: "19px",
+  backgroundColor: "#fff",
+});
+
+export const textarea = style({
+  flex: 1,
+  lineHeight: 1.6,
+  minHeight: "9.6em",
+  margin: "10px 14px",
+  "::placeholder": {
+    color: "#c1bebe",
+    fontSize: "0.875em",
+  },
+});
+
 export const button = style({
   padding: "12px 18px",
   color: "#7E7E7F",
@@ -60,6 +87,10 @@ export const button = style({
   selectors: {
     [`${inputBox} &`]: {
       fontSize: "0.875em",
+    },
+    [`${textareaBox} &`]: {
+      alignSelf: "flex-end",
+      width: "100%",
     },
   },
 });
