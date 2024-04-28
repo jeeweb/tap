@@ -1,9 +1,8 @@
 "use client";
-import { ICreateAccountForm } from "@/types/User";
 import Input from "@/app/_component/Input";
-import * as formStyles from "@/styles/form.css";
 import { useFormState } from "react-dom";
 import { createAccount } from "./action";
+import * as formStyles from "@/styles/form.css";
 
 export default function CreateAccount() {
   const [state, dispatch] = useFormState(createAccount, null);

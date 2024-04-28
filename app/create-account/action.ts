@@ -1,6 +1,7 @@
 "use server";
 import bcrypt from "bcrypt";
 import db from "@/libs/db";
+import { redirect } from "next/navigation";
 import { createAccountFormSchema } from "@/libs/validation";
 
 export async function createAccount(prevState: any, formData: FormData) {
@@ -29,6 +30,6 @@ export async function createAccount(prevState: any, formData: FormData) {
         id: true,
       },
     });
-    // redirect("/log-in");
+    redirect("/log-in");
   }
 }

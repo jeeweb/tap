@@ -37,6 +37,18 @@ const passwordRegex = new RegExp(
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*?[#?!@$%^&*-]).+$/
 );
 
+const checkEmailExists = async (email: string) => {
+  const user = await db.user.findUnique({
+    where: {
+      email,
+    },
+    select: {
+      id: true,
+    },
+  });
+  return Boolean(user);
+};
+
 export const createAccountFormSchema = z
   .object({
     username: z
@@ -61,29 +73,37 @@ export const createAccountFormSchema = z
       .string({
         required_error: "Please write your password.",
       })
-      .min(10)
-      .regex(
-        passwordRegex,
-        "Passwords must contain at least one UPPERCASE, lowercase, number and special characters #?!@$%^&*-"
-      ),
+      .min(5),
+    // .regex(
+    //   passwordRegex,
+    //   "Passwords must contain at least one UPPERCASE, lowercase, number and special characters #?!@$%^&*-"
+    // ),
     confirmPassword: z
       .string({
         required_error: "Please confirm your password.",
       })
       .trim()
-      .min(10),
+      .min(5),
   })
   .refine(checkPasswords, {
     message: "Both passwords should be the same!",
     path: ["confirm_password"],
   });
 
-export const loginFormSchema = z;
-// .object({
-//   email: emailDefaultSchema.superRefine(checkEmailExists),
-//   password: passwordDefaultSchema,
-// })
-// .refine(checkPasswordIsRight, {
-//   message: ErrorMessages.PASSWORD_WRONG_ERROR,
-//   path: ["password"],
-// });
+export const loginFormSchema = z.object({
+  email: z
+    .string({
+      required_error: "Please write your email.",
+    })
+    .email()
+    .toLowerCase(),
+  password: z
+    .string({
+      required_error: "Please write your password.",
+    })
+    .min(5),
+  // .regex(
+  //   passwordRegex,
+  //   "Passwords must contain at least one UPPERCASE, lowercase, number and special characters #?!@$%^&*-"
+  // ),
+});
