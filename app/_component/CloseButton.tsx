@@ -1,11 +1,17 @@
-import Link from "next/link";
+"use client";
+import { useRouter } from "next/navigation";
 import { IconClose } from "@/app/_component/icons/IconClose";
 import * as postStyles from "@/styles/post.css";
 
 export function CloseButton() {
+  const router = useRouter();
+  const handleCloseModal = () => {
+    router.back();
+  };
+
   return (
-    <Link href="/" className={postStyles.ButtonClose}>
+    <button onClick={handleCloseModal} className={postStyles.ButtonClose}>
       <IconClose />
-    </Link>
+    </button>
   );
 }

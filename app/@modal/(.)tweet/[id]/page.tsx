@@ -20,7 +20,7 @@ export default function PostDetail({ params }: { params: { id: string } }) {
     <div className={postStyles.modalWrapper}>
       <div className={postStyles.modalContent}>
         <div className={postStyles.userInfo}>
-          <span className={postStyles.username}>{postData?.author}</span>
+          <span className={postStyles.username}>{postData?.author}Page</span>
         </div>
         <div className={postStyles.postTop}>
           <span className={postStyles.postCreatedAt}>
