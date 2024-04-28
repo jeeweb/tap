@@ -101,3 +101,15 @@ export const formError = style({
   color: "#DE6B2D",
   fontSize: "0.875em",
 });
+
+export const greeting = style({
+  margin: "2.4em 0 0.6em",
+  fontSize: "2em",
+  lineHeight: 1.4,
+  fontWeight: 600,
+});
+
+export const sayHello = style({
+  display: "block",
+  color: "#5BDCC0",
+});

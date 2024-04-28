@@ -34,18 +34,6 @@ export const aside = style({
   minWidth: "164px",
 });
 
-export const greeting = style({
-  margin: "2.4em 0 0.6em",
-  fontSize: "2em",
-  lineHeight: 1.4,
-  fontWeight: 600,
-});
-
-export const sayHello = style({
-  display: "block",
-  color: "#5BDCC0",
-});
-
 export const contentWrap = style({
   flex: 1,
   position: "relative",
