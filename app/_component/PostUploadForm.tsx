@@ -18,8 +18,6 @@ async function getUser() {
 
 export async function PostUploadForm() {
   const user = await getUser();
-  console.log(user);
-
   if (user) {
     return (
       <div>
