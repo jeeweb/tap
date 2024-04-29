@@ -95,6 +95,15 @@ export const button = style({
   },
 });
 
+export const link = style({
+  display: "block",
+  padding: "16px 0",
+  fontWeight: "bold",
+  ":hover": {
+    color: "#5BDCC0",
+  },
+});
+
 export const formError = style({
   lineHeight: 1.4,
   paddingLeft: "14px",

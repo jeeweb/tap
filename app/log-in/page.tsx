@@ -5,6 +5,7 @@ import Input from "@/app/_component/Input";
 import { useFormState } from "react-dom";
 import { login } from "./action";
 import * as formStyles from "@/styles/form.css";
+import Link from "next/link";
 
 export default function Login() {
   const [state, dispatch] = useFormState(login, null);
@@ -36,6 +37,14 @@ export default function Login() {
           <button className={formStyles.button}>Login</button>
         </div>
       </form>
+      <div>
+        <p>Do you want to sign up?</p>
+        <div>
+          <Link href="/create-account" className={formStyles.link}>
+            Create Account
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
